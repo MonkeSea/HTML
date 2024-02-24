@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tester for ITCamp20</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+        max-width: 400px;
+    }
+    .small {
+        max-height: 300px;
+    }
+    .medium {
+        max-height: 500px;
+        max-width: 500px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+
+<div class="container medium">
+    <h1 class="title">Say Hello World</h1>
+    <button class="sayhello" >Say Hi</button>
+    <button class="reset" id="reset">Reset</button>
+    <p class="targetParagraph_hey">ผมสนใจที่จะเข้าร่วมค่าย Heart site พึ่งเริ่มศึกษาและพร้อมที่จะเรียนรู้และพัฒนาอยู่ตลอด</p>
+</div>
+
+<div class="container small">
+    <h1>Random Number</h1>
+    <button class="randomcolor">Change Color</button>
+    <p class="targetParagraph_color">XX</p>
+</div>
+
+<script>
+    var buttons = document.querySelectorAll('.sayhello');
+    var num = 0;
+    buttons.forEach(function(button, index) {
+        console.log(button+"   "+index)
+        button.addEventListener('click', function() {
+            var paragraphs = document.querySelectorAll('.title');
+            paragraphs[index].textContent = "Hey I'm Wachirawich";
+           
+        });
+    });
+    
+    var button1 = document.getElementById('reset');
+    button1.addEventListener('click', function() {
+            var paragraphs = document.querySelectorAll('.title');
+            paragraphs[0].textContent = "Say Hello World";
+           
+        });
+    
+    var buttons = document.querySelectorAll('.randomcolor');
+    buttons.forEach(function(button, index) {
+        button.addEventListener('click', function() {
+            var paragraphs = document.querySelectorAll('.targetParagraph_color');
+            paragraphs[index].textContent  = Math.floor(Math.random()*100);
+            
+        });
+    });
+</script>
+
+</body>
+</html>
